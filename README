@@ -1,6 +1,8 @@
 Percona Server 5.7
 ------------------
 
+- WITH SPHINX MODULE SUPPORT -
+
 Percona Server is a branch of MySQL 5.7 bringing higher performance,
 reliability and more features.
 
