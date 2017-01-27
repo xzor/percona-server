@@ -1,7 +1,16 @@
-Percona Server 5.7
+Percona Server 5.7 (sphinx support)
 ------------------
 
 - WITH SPHINX MODULE SUPPORT -
+First, clone, checkout the 5.7 then init and update all submodules.
+
+1. cmake . -DDOWNLOAD_BOOST=1 -DWITH_BOOST=$HOME/boost #this downloads boost from percona
+2. export WITH_BOOST=${HOME}/boost #set environment variable #(see cmake/boost.cmake | Invoke with -DWITH_BOOST=<directory> or set WITH_BOOST in environment.)
+3. sh BUILD/autorun.sh; ./configure --with-plugins=sphinx
+4. cmake dist
+5. cmake . -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_CONFIG=mysql_release -DFEATURE_SET=community -DWITH_EMBEDDED_SERVER=OFF
+6. NOW go into /storage/sphinx and run "make" to just compile the ha_sphinx.o.
+
 
 Percona Server is a branch of MySQL 5.7 bringing higher performance,
 reliability and more features.
